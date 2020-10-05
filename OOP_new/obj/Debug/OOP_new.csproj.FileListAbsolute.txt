@@ -1,0 +1,10 @@
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.Form1.resources
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.Properties.Resources.resources
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\OOP_new\OOP_new\bin\Debug\OOP_new.exe.config
+C:\Users\USER\source\repos\OOP_new\OOP_new\bin\Debug\OOP_new.exe
+C:\Users\USER\source\repos\OOP_new\OOP_new\bin\Debug\OOP_new.pdb
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.exe
+C:\Users\USER\source\repos\OOP_new\OOP_new\obj\Debug\OOP_new.pdb
