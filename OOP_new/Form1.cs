@@ -24,7 +24,9 @@ namespace OOP_new
         {
             if (isVaild())
             {
-                DataAccess.AddCustomer(fstnamebox.Text, lstnamebox.Text, agebox.Text, citybox.Text);
+                Customer newCustomer = new Customer(-1,fstnamebox.Text, lstnamebox.Text, agebox.Text, citybox.Text);
+               
+                DataAccess.AddCustomer(newCustomer);
 
                 MessageBox.Show("New Customer Added Successfully!", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -40,7 +42,8 @@ namespace OOP_new
             {
                 if (customerID == Convert.ToInt32(idbox.Text))
                 {
-                    DataAccess.AddUpdateCustomer(customerID, fstnamebox.Text, lstnamebox.Text, agebox.Text, citybox.Text);
+                    Customer newCustomer = new Customer(customerID, fstnamebox.Text, lstnamebox.Text, agebox.Text, citybox.Text);
+                    DataAccess.AddUpdateCustomer(newCustomer);
 
                     MessageBox.Show("Customer's Record Updated Successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -63,9 +66,10 @@ namespace OOP_new
         {
             if (customerID > 0)
             {
-                DataAccess.DeleteCustomer(customerID);
+                Customer newCustomer = new Customer(customerID);
+                DataAccess.DeleteCustomer(newCustomer);
 
-                MessageBox.Show("Customer's Details Updated Successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Customer's Deleted Successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 CustomerTable.DataSource = DataAccess.GeAlltCustomers();
                 refreshBoxs();

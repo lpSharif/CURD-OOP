@@ -17,14 +17,14 @@ namespace OOP_new
         {
             con = new SqlConnection(@"Data Source=LPSHARIF;Initial Catalog=Customer;Integrated Security=True");
         }
-        public int AddCustomer(string firstName, string lastName, string age, string city)
+        public int AddCustomer(Customer Customer)
         {
             SqlCommand cmd = new SqlCommand("insert into Customer values (@firstName, @lastName,@age,@city)", con);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@firstName", firstName);
-            cmd.Parameters.AddWithValue("@lastName", lastName);
-            cmd.Parameters.AddWithValue("@age", age);
-            cmd.Parameters.AddWithValue("@city", city);
+            cmd.Parameters.AddWithValue("@firstName", Customer.firstName);
+            cmd.Parameters.AddWithValue("@lastName", Customer.lastName);
+            cmd.Parameters.AddWithValue("@age", Customer.age);
+            cmd.Parameters.AddWithValue("@city", Customer.city);
             con.Open();
             int status = cmd.ExecuteNonQuery();
             con.Close();
@@ -43,26 +43,26 @@ namespace OOP_new
 
              return dt;
         }
-        public void DeleteCustomer(int customerId)
+        public void DeleteCustomer(Customer Customer)
         {
             SqlCommand cmd = new SqlCommand("DELETE FROM Customer WHERE customerId = @customerId", con);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@customerId", customerId);
+            cmd.Parameters.AddWithValue("@customerId", Customer.id);
 
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public void AddUpdateCustomer(int customerId,string fstName,string lstName,string age,string city)
+        public void AddUpdateCustomer(Customer Customer)
         {
             SqlCommand cmd = new SqlCommand("UPDATE Customer SET firstName = @firstName, lastName = @lastName,age = @age,city = @city WHERE customerId = @customerId", con);
             cmd.CommandType = CommandType.Text;
 
-            cmd.Parameters.AddWithValue("@firstName", fstName);
-            cmd.Parameters.AddWithValue("@lastName", lstName);
-            cmd.Parameters.AddWithValue("@age", age);
-            cmd.Parameters.AddWithValue("@city", city);
-            cmd.Parameters.AddWithValue("@customerId", customerId);
+            cmd.Parameters.AddWithValue("@firstName", Customer.firstName);
+            cmd.Parameters.AddWithValue("@lastName", Customer.lastName);
+            cmd.Parameters.AddWithValue("@age", Customer.age);
+            cmd.Parameters.AddWithValue("@city", Customer.city);
+            cmd.Parameters.AddWithValue("@customerId", Customer.id);
 
             con.Open();
             cmd.ExecuteNonQuery();
